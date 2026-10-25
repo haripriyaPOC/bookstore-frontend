@@ -80,8 +80,8 @@ jobs:
       # 10. Update frontend image and deploy
       - name: Deploy Frontend to Kubernetes
         run: |
-          kubectl set image deployment/my-frontend-deployment \
+          kubectl set image deployment/my-app-frontend \
             frontend=${{ secrets.DOCKER_USERNAME }}/bookstore-frontend:${{ github.sha }}
 
-          kubectl rollout status deployment/my-frontend-deployment \
+          kubectl rollout status deployment/my-app-frontend \
             --timeout=180s
