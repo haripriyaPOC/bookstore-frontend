@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: haripriya1310/bookstore-frontend:v1
+          image: haripriya1310/bookstore-frontend:${{ github.sha }}
           imagePullPolicy: Always
           ports:
             - containerPort: 5173
